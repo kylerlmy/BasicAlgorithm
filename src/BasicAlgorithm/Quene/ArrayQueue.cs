@@ -25,11 +25,25 @@ namespace Quene
         public bool Enquenue(string item)
         {
             //如果队列已经满了,直接退出
-            if (tail == arrayLength) return false;
+            if (tail == arrayLength)
+            {
+                // tail ==n && head==0，表示整个队列都
+                if (head == 0) return false;
+
+                for (int i = head; i < tail; i++)
+                {
+                    items[i = head] = items[i];
+                }
+
+                //数据搬迁完了以后，重新更新head和tail
+
+                tail = tail - head;
+                head = 0;
+
+            }
 
             items[tail] = item;
             ++tail;
-
             return true;
         }
 
