@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Algorithm.Basic.Sort\Algorithm.Basic.Sort.csproj" />
+    <ProjectReference Include="..\DataStructure\DataStruct.csproj" />
     <ProjectReference Include="..\Quene\Quene.csproj" />
   </ItemGroup>
 
