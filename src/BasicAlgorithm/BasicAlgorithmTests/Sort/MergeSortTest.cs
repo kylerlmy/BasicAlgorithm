@@ -9,9 +9,13 @@ namespace BasicAlgorithmTests.Sort
     public class MergeSortTest
     {
         private MergeSort _mergeSort;
+        private MergeSortTwice _mergeSortTwice;
+        private MergeSortThird _mergeSortThird;
         public MergeSortTest()
         {
             _mergeSort = new MergeSort();
+            _mergeSortTwice = new MergeSortTwice();
+            _mergeSortThird = new MergeSortThird();
         }
 
         [Fact]
@@ -32,7 +36,9 @@ namespace BasicAlgorithmTests.Sort
         {
             var sourceArray = new int[] { 6, 5, 4, 3, 2, 1 };
 
-            _mergeSort.MergeSortItems(sourceArray, 0, 3, 5);
+            //    _mergeSort.MergeSortItems(sourceArray, 0, 3, 5);
+            _mergeSortTwice.MergeSortSub(sourceArray, 0, sourceArray.Length - 1);
+            // _mergeSortThird.mergeSortInternally(sourceArray, 0, sourceArray.Length - 1);
 
             Assert.Equal(new int[] { 1, 2, 3, 4, 5, 6 }, sourceArray);
 
